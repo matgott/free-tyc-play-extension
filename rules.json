@@ -1,0 +1,10 @@
+[{
+  "id": 1,
+  "condition": {
+    "urlFilter": "|https://sp.tbxnet.com/v2/auth/tyc/status.json"
+  },
+  "action": {
+    "type": "redirect",
+    "redirect": {"url": "data:application/json;base64,eyJzdGF0dXMiOnRydWV9"}
+  }
+}]

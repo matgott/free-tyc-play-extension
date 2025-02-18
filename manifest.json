@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Free TyC Sports Play",
+  "description": "Bypass TyC Sports login and allows to watch any video",
+  "version": "1.0",
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'"
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "declarative_net_request": {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "*://play.tycsports.com/*",
+        "*://www.play.tycsports.com/*"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
